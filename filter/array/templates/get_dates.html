@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">Manage dates</h3>
+
+    <div class="row top-margin">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('get_dates') }}" class="btn-large light-blue darken-2 text-shadow">
+               Date <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for date in get_dates %}
+            <div class="col s12 m3">
+                <div class="card light-blue darken-4 text-shadow center-align">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ date.last_scraped }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

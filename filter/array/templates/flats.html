@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">All Flats</h3>
+
+    <div class="row car-panel grey lighten-5">
+        <form class="col s12">
+                <table class="table collapsible-header white-text light-blue darken-4 text-shadow"">
+
+                    <tbody>
+
+                        <tr>
+                            <th scope="name"> <strong>name</strong></th>
+                            <th scope="location"> <strong>location</strong></th>
+                            <th scope="description"> <strong>description</strong></th>
+                            <th scope="date"> <strong>date</strong> </th>
+                        </tr>
+                        {% for flat in flats %}
+                        <tr>
+
+                                <td>{{ flat['name'] }}</td>
+                                <td>{{ flat['host_location'] }}</td>
+                                <td>{{ flat['description'] }}</td>
+                                <td>{{ flat['last_scraped'] }}</td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+
+                </table>
+        </form>
+    </div>
+
+
+
+{% endblock %}
